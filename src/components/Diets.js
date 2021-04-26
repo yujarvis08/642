@@ -21,7 +21,7 @@ const Diets = () => {
             <Nav.Link href="/meals" className="text-white">
               Set a Meal
             </Nav.Link>
-            <Nav.Link href="/values" className="text-white">
+            <Nav.Link href="/values/men" className="text-white">
               Daily Values
             </Nav.Link>
             <Nav.Link href="/stats" className="text-white">

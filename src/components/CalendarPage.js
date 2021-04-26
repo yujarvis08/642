@@ -14,7 +14,7 @@ const CalendarPage = () => {
           <Nav className="mr-auto">
             <Nav.Link href="/"  className="text-white">Calendar</Nav.Link>
             <Nav.Link href="/diets"  className="text-white">Recommended Diets</Nav.Link>
-            <Nav.Link href="/meals"  className="text-white">Set a Meal</Nav.Link>
+            <Nav.Link href="/meals/men"  className="text-white">Set a Meal</Nav.Link>
             <Nav.Link href="/values"  className="text-white">Daily Values</Nav.Link>
             <Nav.Link href="/stats"  className="text-white">Your Statistics</Nav.Link>
           </Nav>
