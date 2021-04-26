@@ -11,6 +11,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Row from "react-bootstrap/Row";
 
 const useStyles = makeStyles({
   table: {
@@ -39,7 +40,11 @@ const rows = [
 const ValuesWomen = () => {
   const classes = useStyles();
   return (
+      
     <Container>
+        <Row className="justify-content-around" style={{ zIndex: "9" }}>
+            <p class="text-danger">THESE VALUES ARE TAKEN FROM THE INTERNET! EVERYONE HAS DIFFERENT NEEDS. THIS IS FOR EDUCATIONAL PURPOSES ONLY</p>
+        </Row>
       <Navbar bg="secondary" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
