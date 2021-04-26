@@ -40,11 +40,13 @@ const rows = [
 const ValuesWomen = () => {
   const classes = useStyles();
   return (
-      
     <Container>
-        <Row className="justify-content-around" style={{ zIndex: "9" }}>
-            <p class="text-danger">THESE VALUES ARE TAKEN FROM THE INTERNET! EVERYONE HAS DIFFERENT NEEDS. THIS IS FOR EDUCATIONAL PURPOSES ONLY</p>
-        </Row>
+      <Row className="justify-content-around" style={{ zIndex: "9" }}>
+        <p class="text-danger">
+          THESE VALUES ARE TAKEN FROM THE INTERNET! EVERYONE HAS DIFFERENT
+          NEEDS. THIS IS FOR EDUCATIONAL PURPOSES ONLY
+        </p>
+      </Row>
       <Navbar bg="secondary" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -84,6 +86,7 @@ const ValuesWomen = () => {
       <br></br>
       <br></br>
       <br></br>
+
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
@@ -104,6 +107,21 @@ const ValuesWomen = () => {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <Row>
+        <p>The info from these tables are taken from these sites:</p>
+        <p>
+          {" "}
+          https://www.health.harvard.edu/newsletter_article/good-nutrition-should-guidelines-differ-for-men-and-women.UpdatedSeptember
+        </p>
+        <p>
+          https://www.ahajournals.org/doi/full/10.1161/circulationaha.105.169251
+        </p>
+        <p>
+          {" "}
+          https://www.myfooddata.com/articles/recommended-daily-intakes.php#dv-rdi-ul-differences
+        </p>
+      </Row>
     </Container>
   );
 };

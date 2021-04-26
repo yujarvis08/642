@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 const Meals = () => {
     return (
@@ -18,6 +20,14 @@ const Meals = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+        <Container style={{ display: "flex", flexWrap: "wrap" }}>
+        <Card style={{ width: "20rem", margin: "1em" }}>
+          <Card.Body>
+            <Card.Title>Add a Meal</Card.Title>
+            <Button>+</Button>
+          </Card.Body>
+        </Card>
+        </Container>
       </Container>
     )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Stats = () => {
     return (
@@ -18,6 +19,15 @@ const Stats = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
+      <Dropdown style={{ marginTop: "1em", marginBottom: "3em" }}>
+        <Dropdown.Toggle bg="info">Sort By</Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item href="/stats/weekly">Weekly</Dropdown.Item>
+          <Dropdown.Item href="/stats/monthly">Monthly</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
       </Container>
     )
 }
