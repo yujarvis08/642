@@ -4,15 +4,20 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
+import ExampleMealModal from "./ExampleMealModal";
 import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 const Meals = () => {
+  const [showAdd, setShowAdd] = React.useState(false);
+
+  const handleCloseAdd = () => setShowAdd(false);
+  const handleShowAdd = () => setShowAdd(true);
+
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   return (
     <Container>
       <Navbar bg="secondary" expand="lg">
@@ -38,12 +43,18 @@ const Meals = () => {
         </Navbar.Collapse>
       </Navbar>
       <Container style={{ display: "flex", flexWrap: "wrap" }}>
+        <Card onClick={handleShow} style={{ width: "20rem", margin: "1em" }}>
+        <Card.Title>Example Meal 1</Card.Title>
+        <Card.Body>My breakfast today</Card.Body>
+        </Card>
+        <ExampleMealModal showState={show} handleClose={handleClose} />
+
         <Card style={{ width: "20rem", margin: "1em" }}>
           <Card.Body>
             <Card.Title>Add a Meal</Card.Title>
-            <Button onClick={handleShow}>+</Button>
+            <Button onClick={handleShowAdd}>+</Button>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={showAdd} onHide={handleCloseAdd}>
               <Modal.Header closeButton>
                 <Modal.Title>What are you eating today?</Modal.Title>
               </Modal.Header>
@@ -106,10 +117,10 @@ const Meals = () => {
                 </Form>
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" onClick={handleCloseAdd}>
                   Close
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={handleCloseAdd}>
                   Add
                 </Button>
               </Modal.Footer>
