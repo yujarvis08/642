@@ -63,7 +63,7 @@ const ValuesMen = () => {
             <Nav.Link href="/values" className="text-white">
               Daily Values
             </Nav.Link>
-            <Nav.Link href="/stats" className="text-white">
+            <Nav.Link href="/stats/weekly" className="text-white">
               Your Statistics
             </Nav.Link>
           </Nav>
