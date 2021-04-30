@@ -3,11 +3,41 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
+import Ketoimg from "../images/keto.jpg";
+import Vegetarianimg from "../images/vegetarian.jpg";
+import Lowfatimg from "../images/lowfat.jpg";
+import Mediterraneanimg from "../images/mediterranean.jpg";
+import KetoModal from "./KetoModal";
+import VegetarianModal from "./VegetarianModal";
+import LowFatModal from "./LowFatModal";
+import MediterraneanModal from "./MediterraneanModal";
+import Row from "react-bootstrap/Row";
 
 const Diets = () => {
+  const [showK, setShowK] = React.useState(false);
+  const handleCloseK = () => setShowK(false);
+  const handleShowK = () => setShowK(true);
+
+  const [showV, setShowV] = React.useState(false);
+  const handleCloseV = () => setShowV(false);
+  const handleShowV = () => setShowV(true);
+
+  const [showL, setShowL] = React.useState(false);
+  const handleCloseL = () => setShowL(false);
+  const handleShowL = () => setShowL(true);
+
+  const [showM, setShowM] = React.useState(false);
+  const handleCloseM = () => setShowM(false);
+  const handleShowM = () => setShowM(true);
   return (
     <Container>
-      
+      <Row className="justify-content-around" style={{ zIndex: "9" }}>
+        <p class="text-danger">
+          THESE ARE DIETS THAT I GOOGLED ON THE INTERNET. I AM NOT RECOMMENDING
+          YOU THESE DIETS. THIS IS FOR EDUCATIONAL PURPOSES ONLY. I AM NOT
+          RESPONSIBLE FOR ANYTHING THAT YOU FOLLOW ON THIS APP.
+        </p>
+      </Row>
       <Navbar bg="secondary" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -32,8 +62,13 @@ const Diets = () => {
       </Navbar>
 
       <Container style={{ display: "flex", flexWrap: "wrap" }}>
-        <Card style={{ width: "20rem", margin: "1em" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card onClick={handleShowK} style={{ width: "20rem", margin: "1em" }}>
+          <KetoModal showState={showK} handleClose={handleCloseK} />
+          <Card.Img
+            variant="top"
+            src={Ketoimg}
+            style={{ height: "20rem", width: "20rem" }}
+          />
           <Card.Body>
             <Card.Title>Keto</Card.Title>
             <Card.Text>
@@ -42,9 +77,14 @@ const Diets = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+        <KetoModal showState={showK} handleClose={handleCloseK} />
 
-        <Card style={{ width: "20rem", margin: "1em" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card onClick={handleShowV} style={{ width: "20rem", margin: "1em" }}>
+          <Card.Img
+            variant="top"
+            src={Vegetarianimg}
+            style={{ height: "20rem", width: "20rem" }}
+          />
           <Card.Body>
             <Card.Title>Vegetarian</Card.Title>
             <Card.Text>
@@ -54,9 +94,14 @@ const Diets = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+        <VegetarianModal showState={showV} handleClose={handleCloseV} />
 
-        <Card style={{ width: "20rem", margin: "1em" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card onClick={handleShowL} style={{ width: "20rem", margin: "1em" }}>
+          <Card.Img
+            variant="top"
+            src={Lowfatimg}
+            style={{ height: "20rem", width: "20rem" }}
+          />
           <Card.Body>
             <Card.Title>Low-Fat Diet</Card.Title>
             <Card.Text>
@@ -64,33 +109,26 @@ const Diets = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+        <LowFatModal showState={showL} handleClose={handleCloseL} />
 
-        <Card style={{ width: "20rem", margin: "1em" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card onClick={handleShowM} style={{ width: "20rem", margin: "1em" }}>
+          <Card.Img
+            variant="top"
+            src={Mediterraneanimg}
+            style={{ height: "20rem", width: "20rem" }}
+          />
           <Card.Body>
-            <Card.Title>Mediterranian</Card.Title>
+            <Card.Title>Mediterranean</Card.Title>
             <Card.Text>
-              The Mediterranian diet is based on foods that people in Greece,
+              The Mediterranean diet is based on foods that people in Greece,
               Italy, and Spain used to eat. It consists of eating many foods
               like vegetables, fruits, nuts, seafood, and grains.
             </Card.Text>
           </Card.Body>
         </Card>
-
-        <Card style={{ width: "20rem", margin: "1em" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Mediterranian</Card.Title>
-            <Card.Text>
-              The Mediterranian diet is based on foods that people in Greece,
-              Italy, and Spain used to eat. It consists of eating many foods
-              like vegetables, fruits, nuts, seafood, and grains.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
+        <MediterraneanModal showState={showM} handleClose={handleCloseM} />
       </Container>
-
+      <p>Images are from this site: https://unsplash.com/</p>
     </Container>
   );
 };
